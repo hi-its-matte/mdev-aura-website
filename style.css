@@ -1,0 +1,244 @@
+/* --------------------*/
+/*   GLOBAL RESET       */
+/* --------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0a0a0a;
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+/* --------------------*/
+/*     BUTTONS          */
+/* --------------------*/
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #6c63ff, #9f94ff);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(108,99,255,0.5);
+}
+
+.btn-secondary {
+  background: #1a1a2e;
+  color: #6c63ff;
+}
+
+.btn-secondary:hover {
+  background: #2a2a50;
+}
+
+/* --------------------*/
+/*     HEADER           */
+/* --------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.header-text h1 {
+  font-size: 4rem;
+  background: linear-gradient(90deg,#6c63ff,#9f94ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-text p {
+  font-size: 1.3rem;
+  color: #aaa;
+  margin: 1rem 0 2rem;
+}
+
+.header-image img {
+  width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(108,99,255,0.3);
+}
+
+/* --------------------*/
+/*     ABOUT SECTION    */
+/* --------------------*/
+.about {
+  text-align: center;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills span {
+  background: #1a1a2e;
+  color: #9f94ff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+/* --------------------*/
+/*     PROJECTS GRID LAYOUT   */
+/* --------------------*/
+.highlights {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1.5rem;
+  height: 800px; /* Altezza totale della sezione */
+}
+
+.project, .highlight-card {
+  background: #111;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover, .highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(108,99,255,0.25);
+}
+
+/* Progetti principali 2x2 */
+.project.aura {
+  grid-column: 1 / 3; /* occupa colonne 1-2 */
+  grid-row: 1 / 3;    /* occupa righe 1-2 */
+}
+
+.project.shadow {
+  grid-column: 3 / 5; /* occupa colonne 3-4 */
+  grid-row: 1 / 3;    /* occupa righe 1-2 */
+}
+
+/* Card sotto (sito e WhatsApp) */
+.highlight-card.site {
+  grid-column: 1 / 3; /* 2 colonne */
+  grid-row: 3 / 5;    /* ultime 2 righe */
+}
+
+.highlight-card.whatsapp {
+  grid-column: 3 / 5; /* 2 colonne */
+  grid-row: 3 / 5;    /* ultime 2 righe */
+}
+
+.project img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
+
+.project h3, .highlight-card h3 {
+  color: #6c63ff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.project p, .highlight-card p {
+  color: #aaa;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-stack span {
+  background: #1a1a2e;
+  color: #9f94ff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* --------------------*/
+/*     FOOTER           */
+/* --------------------*/
+footer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  color: #777;
+  border-top: 1px solid #1f1f1f;
+}
+
+/* --------------------*/
+/*     RESPONSIVE       */
+/* --------------------*/
+@media (max-width: 900px) {
+  .highlights {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .project.aura,
+  .project.shadow,
+  .highlight-card.site,
+  .highlight-card.whatsapp {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+  
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-image img {
+    width: 200px;
+  }
+}
